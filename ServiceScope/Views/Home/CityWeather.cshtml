@@ -1,0 +1,10 @@
+﻿@model JSONData.Root
+
+
+@if(Model!=null)
+{
+    <p>City : @Model.Name </p>
+    <p>Temp : @Model.Main.Temp 'C</p>
+    <p>Min Temp : @Model.Main.TempMin 'C</p>
+    <p>Max Temp : @Model.Main.TempMax 'C</p>
+}

@@ -49,10 +49,39 @@ namespace ServiceScope.Controllers
             return View("Transient", _scopedService.GetGuid());
         }
 
-        public async Task<IActionResult> Weather()
+        //public async Task<IActionResult> Weather()
+        //{
+        //    string? apiKey = _configuration.GetConnectionString("API_ID");
+        //    string url = $"https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={apiKey}";
+        //    HttpClient httpClient = new HttpClient();
+
+        //    try
+        //    {
+        //        var httpResponse = await httpClient.GetAsync(url);
+        //        string jsonResponse = await httpResponse.Content.ReadAsStringAsync();
+
+        //        var weatherData = JsonConvert.DeserializeObject<JSONData.Root>(jsonResponse);
+        //        return View("Weather", weatherData);
+
+        //    }
+        //    catch
+        //    {
+        //        return View("Weather", null);
+        //    }
+        //}
+        
+        public IActionResult Weather()
         {
-            string? apiKey = _configuration.GetConnectionString("API_ID");
-            string url = $"https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={apiKey}";
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CityWeather(FormInput formObj)
+        {
+            string city = formObj.City;
+            string? apiKey = _configuration.GetSection("API_Settings")["API_ID"];
+            string? apiBaseUrl = _configuration.GetSection("API_Settings")["API_BaseUrl"];
+            string url = $"{apiBaseUrl}?q={city}&units=metric&appid={apiKey}";
             HttpClient httpClient = new HttpClient();
 
             try
@@ -60,17 +89,15 @@ namespace ServiceScope.Controllers
                 var httpResponse = await httpClient.GetAsync(url);
                 string jsonResponse = await httpResponse.Content.ReadAsStringAsync();
 
-                var weatherData = JsonConvert.DeserializeObject<JSONData.Root>(jsonResponse);
-                return View("Weather", weatherData);
+                var cityWeatherData = JsonConvert.DeserializeObject<JSONData.Root>(jsonResponse);
+                return View("CityWeather", cityWeatherData);
 
             }
             catch
             {
-                return View("Weather", null);
+                return View("CityWeather", null);
             }
         }
-        
-        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

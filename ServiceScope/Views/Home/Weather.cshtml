@@ -1,15 +1,21 @@
-﻿@model JSONData.Root
+﻿@model FormInput
 
 
     <h1>Weather Data</h1>
 
-    @if(Model!=null)
+    @*@if(Model!=null)
 {   
     <p>Latitude : @Model.Coord.Lat</p>
     <p>Longitude : @Model.Coord.Lon</p>
     <p>Temperature : @Model.Main.Temp</p>
     <p>Pressure : @Model.Main.Pressure</p>
     <p>Humidity : @Model.Main.Humidity</p>
-    <p></p>
 }
+*@
 
+<form asp-controller="Home"  asp-action="CityWeather" method="post">
+    <label>Enter City : </label>
+    <input type="text" asp-for="City"/>
+
+    <button type="submit">Get Weather</button>
+</form>

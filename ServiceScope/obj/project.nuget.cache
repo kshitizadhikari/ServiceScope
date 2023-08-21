@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "VW3KzRO+RH0bz82Ut4o2EuZWsn4QKZQFqsa840YW1Oz95qflKjDPZj32AEJGYTX7eiTyLEwO/TkTeIbIdgrM5A==",
+  "dgSpecHash": "1V/tzvazhu9h04AadGXGso4DHutJ/moZ9SyjdIK8XwmUk18T7tbahgCT+TXPN8gyMrCd3mORueoOv6Ds7eCf7A==",
   "success": true,
-  "projectFilePath": "D:\\asp.net\\ServiceScopeSoln\\ServiceScope\\ServiceScope.csproj",
+  "projectFilePath": "D:\\DotNet\\ServiceScope\\ServiceScope\\ServiceScope.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kshitiz\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\TAF\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

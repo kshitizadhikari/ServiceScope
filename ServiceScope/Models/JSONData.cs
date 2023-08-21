@@ -5,6 +5,9 @@ namespace ServiceScope.Models
     public class JSONData
     {
         // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+
+        
+
         public class Clouds
         {
             [JsonProperty("all")]
@@ -19,8 +22,10 @@ namespace ServiceScope.Models
             [JsonProperty("lat")]
             public double Lat { get; set; }
         }
+
         public class Main
         {
+
             [JsonProperty("temp")]
             public double Temp { get; set; }
 
@@ -38,12 +43,6 @@ namespace ServiceScope.Models
 
             [JsonProperty("humidity")]
             public int Humidity { get; set; }
-
-            [JsonProperty("sea_level")]
-            public int SeaLevel { get; set; }
-
-            [JsonProperty("grnd_level")]
-            public int GrndLevel { get; set; }
         }
 
         public class Root
@@ -128,11 +127,7 @@ namespace ServiceScope.Models
 
             [JsonProperty("deg")]
             public int Deg { get; set; }
-
-            [JsonProperty("gust")]
-            public double Gust { get; set; }
         }
-
 
     }
 }
