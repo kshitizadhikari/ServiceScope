@@ -1,0 +1,15 @@
+﻿@model JSONData.Root
+
+
+    <h1>Weather Data</h1>
+
+    @if(Model!=null)
+{   
+    <p>Latitude : @Model.Coord.Lat</p>
+    <p>Longitude : @Model.Coord.Lon</p>
+    <p>Temperature : @Model.Main.Temp</p>
+    <p>Pressure : @Model.Main.Pressure</p>
+    <p>Humidity : @Model.Main.Humidity</p>
+    <p></p>
+}
+

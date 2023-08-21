@@ -1,0 +1,4 @@
+﻿@using ServiceScope.Services;
+@inject ITransientService Transient
+
+<h2>From Partial View : @Transient.GetGuid()</h2>

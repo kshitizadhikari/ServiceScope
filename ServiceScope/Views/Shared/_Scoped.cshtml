@@ -1,0 +1,4 @@
+﻿@using ServiceScope.Services;
+@inject IScopedService Scoped
+
+<h2>From Partial View : @Scoped.GetGuid()</h2>
